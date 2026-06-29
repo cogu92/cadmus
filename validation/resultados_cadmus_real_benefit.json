@@ -1,0 +1,85 @@
+{
+  "bell_2q": {
+    "n_data_qubits": 2,
+    "ideal": {
+      "00": 0.5009,
+      "11": 0.4991
+    },
+    "tvd_raw": 0.018310546875,
+    "tvd_direct_layerA": 0.00048828125,
+    "tvd_full_cadmus_layerA": 0.003128320312499988,
+    "direct_vs_raw_improvement_pct": 97.33333333333334,
+    "full_vs_direct_delta": 0.002640039062499988,
+    "n_ancilla_added": 1
+  },
+  "ghz_3q": {
+    "n_data_qubits": 3,
+    "ideal": {
+      "000": 0.49855,
+      "111": 0.50145
+    },
+    "tvd_raw": 0.019531249999999972,
+    "tvd_direct_layerA": 0.008408007812499979,
+    "tvd_full_cadmus_layerA": 0.010314941406249972,
+    "direct_vs_raw_improvement_pct": 56.95100000000004,
+    "full_vs_direct_delta": 0.0019069335937499932,
+    "n_ancilla_added": 2
+  },
+  "layer_b_noop_check": {
+    "data_marginal_before": {
+      "11": 2045,
+      "00": 2051
+    },
+    "data_marginal_after": {
+      "11": 2045,
+      "00": 2051
+    },
+    "identical": true
+  },
+  "layer_c_check": {
+    "trials": [
+      {
+        "tvd_before": 0.016479492187500028,
+        "tvd_after": 0.9835205078125,
+        "last_syndrome": [
+          1
+        ]
+      },
+      {
+        "tvd_before": 0.016416406249999987,
+        "tvd_after": 0.9842529296875,
+        "last_syndrome": [
+          1
+        ]
+      },
+      {
+        "tvd_before": 0.015014648437500028,
+        "tvd_after": 0.9849853515625,
+        "last_syndrome": [
+          1
+        ]
+      },
+      {
+        "tvd_before": 0.024477148437500013,
+        "tvd_after": 0.983642578125,
+        "last_syndrome": [
+          1
+        ]
+      },
+      {
+        "tvd_before": 0.016113281250000028,
+        "tvd_after": 0.98388671875,
+        "last_syndrome": [
+          1
+        ]
+      }
+    ],
+    "mean_tvd_before": 0.017700195312500017,
+    "mean_tvd_after": 0.9840576171875
+  },
+  "summary_meta": {
+    "timestamp": "2026-06-22T22:16:20.389802+00:00",
+    "backend_noise_model": "ibm_kingston",
+    "shots": 8192
+  }
+}

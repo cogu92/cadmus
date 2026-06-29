@@ -1,0 +1,40 @@
+{
+  "backend": "ibm_kingston",
+  "A": {
+    "layers_applied": [
+      "A"
+    ],
+    "counts": {
+      "000": 1106,
+      "010": 11,
+      "011": 7,
+      "100": 17,
+      "101": 16,
+      "111": 891
+    },
+    "tvd": 0.06914140624999998,
+    "viability_score": 0.9579
+  },
+  "A+B+C": {
+    "layers_applied": [
+      "B",
+      "C",
+      "A"
+    ],
+    "counts": {
+      "000": 1023,
+      "010": 7,
+      "011": 23,
+      "100": 21,
+      "111": 975
+    },
+    "tvd": 0.02836992187499998,
+    "viability_score": 0.957
+  },
+  "summary": {
+    "timestamp": "2026-06-26T17:58:05.714946+00:00",
+    "backend": "ibm_kingston",
+    "shots": 2048,
+    "abc_beats_a": true
+  }
+}

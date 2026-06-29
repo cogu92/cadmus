@@ -1,0 +1,83 @@
+qiskit_runtime_service.__init__:WARNING:2026-06-22 22:46:29,028: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open), the available account instances are: open-instance. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService().
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:29,029: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:29,559: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:37,253: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:37,871: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:42,754: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:43,015: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-22 22:46:47,343: Using instance: open-instance, plan: open
+Syndrome drift detected! KL=0.2500 > threshold=0.1500 (count=1)
+Syndrome drift detected! KL=0.2158 > threshold=0.1500 (count=1)
+Syndrome drift detected (KL=0.2158). Consider recalibrating before next run.
+============================================================
+CADMUS — Real IBM Hardware Validation
+============================================================
+
+Conectando a IBM Quantum...
+NISQ Health Monitor — 2026-06-22 20:46:47 UTC
+Umbral Q(t) = 0.5
+-------------------------------------------------------
+  Backend                   Q(t)  b(t)    T1[µs]   RO err
+-------------------------------------------------------
+  ibm_kingston            1.0000  OK        241.4   0.0186
+  ibm_fez                 0.4788  --        147.4   0.0192
+  ibm_marrakesh           0.0897  --        181.1   0.0323
+-------------------------------------------------------
+
+  Backend seleccionado: ibm_kingston (156q)
+
+============================================================
+PASO 1-3: Health check, noise profiling, adaptive encoding (local)
+  Viability: 0.9707 -- Excellent — run as-is.
+Noise Map Summary:
+  pair (0, 1)         : 0.0070 (0.70%)
+  qubit 0             : 0.0003 (0.03%)
+  qubit 1             : 0.0003 (0.03%)
+Ancilla allocation plan:
+  pair (0, 1): 1 ancilla  (err=0.0070)
+  Total ancilla: 1
+  Encoded circuit: 3q (data=2 + ancilla=1), cregs=['s', 'c']
+
+============================================================
+PASO 4: Ejecucion en hardware real (vía SamplerV2 parchado)
+  Outcomes unicos: 8  Syndrome entries: 1024
+  Top counts: {'00 0': 503, '11 0': 483, '11 1': 19, '00 1': 7, '10 1': 7}
+
+============================================================
+PASO 5: Layer A — readout correction (calibracion en hardware real)
+  Qubits calibrados: 3 (8 jobs de calibracion)
+  Corrected top counts: {'000': 519, '110': 495, '101': 7, '011': 3}
+
+============================================================
+PASO 6: HybridDecoder + SyndromeDriftDetector sobre syndromes reales
+  PyMatching activo: True
+  Decoded outcomes: 8
+  SyndromeDriftDetector | window=50 | threshold=0.15 | last_kl=0.2500 | drift_events=1 | baseline_set=True
+
+============================================================
+PASO 7: CADMUS full pipeline (A+B+C) — Aer con noise model real
+CADMUS Result
+  Viability score : 0.966
+  Layers applied  : B, C, A
+  Syndrome entries: 1024
+  Top counts      : {'001': 0, '010': 497, '100': 525, '111': 1}
+
+============================================================
+PASO 8 (opcional): CADMUS full pipeline (A+B+C) directo en hardware real
+CADMUS Result
+  Viability score : 0.970
+  Layers applied  : B, C, A
+  Syndrome entries: 512
+  Top counts      : {'001': 3, '010': 252, '100': 252, '110': 2, '111': 3}
+
+============================================================
+RESUMEN
+============================================================
+  timestamp: 2026-06-22T21:41:32.259259+00:00
+  backend: ibm_kingston
+  step4_hardware_execution_ok: True
+  step5_readout_correction_ok: True
+  step7_full_pipeline_aer_noisemodel_ok: True
+  step8_full_pipeline_real_hardware_ok: True
+
+Guardado en resultados_cadmus_hardware.json

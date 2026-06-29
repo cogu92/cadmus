@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadmus-qec"
+version = "0.2.0"
+description = "Circuit-Aware Dynamic Multilayer Update System for adaptive quantum error correction"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Nicolas Corredor Guasca", email = "cogu92@gmail.com" }]
+keywords = [
+  "quantum", "quantum-computing", "error-correction", "qiskit",
+  "noise-mitigation", "ibm-quantum", "adaptive-qec", "nisq"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.11"
+dependencies = [
+  "qiskit>=2.0.0",
+  "qiskit-aer>=0.15.0",
+  "qiskit-ibm-runtime>=0.27.0",
+  "numpy>=1.26.0",
+  "scipy>=1.13.0",
+  "pymatching>=2.2.0",
+  "qvoting>=0.1.0",
+  "matplotlib>=3.8.0",
+  "networkx>=3.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "black>=24.0",
+  "ruff>=0.4.0",
+  "mypy>=1.10",
+]
+notebook = [
+  "jupyter>=1.0",
+  "ipykernel>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cogu92/cadmus"
+Repository = "https://github.com/cogu92/cadmus"
+Issues = "https://github.com/cogu92/cadmus/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cadmus*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=cadmus --cov-report=term-missing"

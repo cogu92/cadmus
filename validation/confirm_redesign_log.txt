@@ -1,0 +1,48 @@
+qiskit_runtime_service.__init__:WARNING:2026-06-26 19:52:46,924: Instance was not set at service instantiation. Free and trial plan instances will be prioritized. Based on the following filters: (tags: None, region: us-east, eu-de), and available plans: (open), the available account instances are: open-instance. If you need a specific instance set it explicitly either by using a saved account with a saved default instance or passing it in directly to QiskitRuntimeService().
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:46,928: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:47,562: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:50,558: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:50,780: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:52,727: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:53,123: Using instance: open-instance, plan: open
+qiskit_runtime_service.backends:WARNING:2026-06-26 19:52:55,345: Using instance: open-instance, plan: open
+Syndrome drift detected! KL=0.3420 > threshold=0.1500 (count=1)
+Syndrome drift detected (KL=0.3420). Consider recalibrating before next run.
+Syndrome drift detected! KL=0.3569 > threshold=0.1500 (count=1)
+Syndrome drift detected (KL=0.3569). Consider recalibrating before next run.
+============================================================
+CADMUS redesign — real hardware confirmation (ghz_3q)
+============================================================
+
+Conectando a IBM Quantum...
+NISQ Health Monitor — 2026-06-26 17:52:55 UTC
+Umbral Q(t) = 0.5
+-------------------------------------------------------
+  Backend                   Q(t)  b(t)    T1[µs]   RO err
+-------------------------------------------------------
+  ibm_kingston            1.0000  OK        249.4   0.0192
+  ibm_fez                 0.3927  --        139.1   0.0211
+  ibm_marrakesh           0.1245  --        182.0   0.0317
+-------------------------------------------------------
+
+  Backend: ibm_kingston (156q)
+  Ideal: {'111': 0.5042, '000': 0.4958}
+
+============================================================
+Configuracion: layers=['A']
+  layers_applied=['A']  TVD=0.0691
+  counts={'000': 1106, '010': 11, '011': 7, '100': 17, '101': 16, '111': 891}
+
+============================================================
+Configuracion: layers=['A', 'B', 'C']
+  layers_applied=['B', 'C', 'A']  TVD=0.0284
+  counts={'000': 1023, '010': 7, '011': 23, '100': 21, '111': 975}
+
+============================================================
+RESUMEN
+============================================================
+  A      TVD=0.0691
+  A+B+C  TVD=0.0284
+  A+B+C bate a A en hardware real: SI
+
+Guardado en resultados_redesign_hardware.json
